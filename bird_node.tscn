@@ -1,0 +1,26 @@
+[gd_scene load_steps=5 format=3 uid="uid://b4kt6giadhrp0"]
+
+[ext_resource type="Script" path="res://Bird.gd" id="1_4otur"]
+[ext_resource type="Texture2D" uid="uid://d3ge1iaq0g3gk" path="res://Dự án mới (3).png" id="2_s15au"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_5fick"]
+size = Vector2(16, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_f4vhu"]
+size = Vector2(18, 18)
+
+[node name="BirdNode" type="Node2D"]
+
+[node name="Bird" type="CharacterBody2D" parent="."]
+script = ExtResource("1_4otur")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Bird"]
+shape = SubResource("RectangleShape2D_5fick")
+
+[node name="Sprite2D" type="Sprite2D" parent="Bird"]
+texture = ExtResource("2_s15au")
+
+[node name="Detect" type="Area2D" parent="Bird"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Bird/Detect"]
+shape = SubResource("RectangleShape2D_f4vhu")
